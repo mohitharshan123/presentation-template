@@ -7,13 +7,20 @@ import {
   SLIDE_TYPE_TITLES,
 } from "../constants";
 
+/**
+ * The type definition for the slide store.
+ */
 type SlideStore = {
-  slides: Array<Slide>;
-  addSlide: (slideType: SlideType) => void;
-  deleteSlide: (idx: string) => void;
-  setSlides: (updateFn: (slides: Array<Slide>) => Array<Slide>) => void;
+  slides: Array<Slide>; // Array of slide objects
+  addSlide: (slideType: SlideType) => void; // Function to add a new slide
+  deleteSlide: (idx: string) => void; // Function to delete a slide by index
+  setSlides: (updateFn: (slides: Array<Slide>) => Array<Slide>) => void; // Function to set slides with an update function
 };
 
+/**
+ * Creates and provides a Zustand store for managing slides.
+ * The store maintains an array of slides and provides methods to add, delete, and update slides.
+ */
 const useSlideStore = create<SlideStore>((set) => ({
   slides: [
     {
@@ -59,6 +66,11 @@ const useSlideStore = create<SlideStore>((set) => ({
       imageSrc: SLIDE_TYPE_IMAGES[SlideType.CLOSING],
     },
   ],
+  
+  /**
+   * Adds a new slide to the store.
+   * @param slideType - The type of slide to add (e.g., SlideType.OPENING, SlideType.IMAGE).
+   */
   addSlide: (slideType: SlideType) =>
     set((state) => {
       const maxIdx = state.slides.reduce(
@@ -79,10 +91,20 @@ const useSlideStore = create<SlideStore>((set) => ({
         slides: [...state.slides, newSlide],
       };
     }),
+
+  /**
+   * Deletes a slide from the store by its index.
+   * @param idx - The index of the slide to delete.
+   */
   deleteSlide: (idx: string) =>
     set((state) => ({
       slides: state.slides.filter((slide) => slide.idx !== idx),
     })),
+
+  /**
+   * Updates the slides in the store using the provided update function.
+   * @param updateFn - A function that receives the current slides and returns the updated slides.
+   */
   setSlides: (updateFn: (slides: Array<Slide>) => Array<Slide>) =>
     set((state) => ({
       slides: updateFn(state.slides),
