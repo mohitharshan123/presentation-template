@@ -21,7 +21,7 @@ const Card: React.FC<Slide> = ({ idx, description, imageSrc, title }) => {
         style={style}
         {...attributes}
         {...listeners}
-        className="h-40 bg-white border rounded-xl shadow-sm sm:flex dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70"
+        className="h-40 w-full bg-white border rounded-xl shadow-sm sm:flex dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70"
       >
         <div className="shrink-0 relative w-full rounded-t-xl overflow-hidden pt-[40%] sm:rounded-s-xl sm:max-w-60 md:rounded-se-none md:max-w-xs">
           <img
