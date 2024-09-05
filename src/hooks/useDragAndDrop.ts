@@ -1,12 +1,9 @@
-import {
-  KeyboardSensor,
-  PointerSensor,
-  useSensor,
-  useSensors,
-} from "@dnd-kit/core";
 import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
-import useSlideStore from "../stores/slidesStore";
+import { KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
+
 import { Slide } from "../types";
+import useSlideStore from "../stores/slidesStore";
+
 /**
  * Custom hook to manage drag-and-drop functionality for slides.
  *

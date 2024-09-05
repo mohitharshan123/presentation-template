@@ -10,6 +10,7 @@ export enum SlideType {
 export type Slide = {
   idx: string;
   type: SlideType;
+  title: string;
   description: string;
   imageSrc?: string;
 };
