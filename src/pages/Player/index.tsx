@@ -1,8 +1,4 @@
-import {
-  DUMMY_IMAGES,
-  SLIDE_TYPE_DESCRIPTIONS,
-  SLIDE_TYPE_TITLES,
-} from "../../constants";
+import { DUMMY_IMAGES } from "../../constants";
 import useSlideStore from "../../stores/slidesStore";
 import { SlideType } from "../../types";
 import ChartSlide from "./ChartSlide";

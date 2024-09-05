@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import { useNavigate } from "react-router-dom";
 
 import { closestCenter, DndContext } from "@dnd-kit/core";
@@ -35,7 +33,11 @@ const Dashboard: React.FC = () => {
             strategy={verticalListSortingStrategy}
           >
             {slides.map(({ idx, description, type, imageSrc, title }) => (
-              <Card idx={idx} key={idx} {...{ description, type, imageSrc, title }} />
+              <Card
+                idx={idx}
+                key={idx}
+                {...{ description, type, imageSrc, title }}
+              />
             ))}
           </SortableContext>
         </DndContext>
