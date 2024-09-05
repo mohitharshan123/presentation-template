@@ -4,13 +4,11 @@ import { SLIDE_TYPE_DESCRIPTIONS, SLIDE_TYPE_TITLES } from "../../constants";
 
 type ImageSlideProps = {
   images: string[];
-  title: string;
-  content: string;
 };
 
 const ImageSlide: React.FC<ImageSlideProps> = ({ images }) => {
   return (
-    <div className="flex flex-col justify-center items-center h-full bg-gray-100 dark:bg-neutral-900 p-6">
+    <div className="flex flex-col justify-center items-center h-full bg-gray-100 dark:bg-neutral-900 p-6 mt-10">
       <TitleAndContent
         title={SLIDE_TYPE_TITLES.IMAGE}
         content={SLIDE_TYPE_DESCRIPTIONS.IMAGE}

@@ -6,6 +6,9 @@ import {
 import useSlideStore from "../../stores/slidesStore";
 import { SlideType } from "../../types";
 import ChartSlide from "./ChartSlide";
+import ClosingSlide from "./ClosingSlide";
+import CodeBlockSlide from "./CodeBlockSlide";
+import CodeEditorSlide from "./CodeEditorSlide";
 import ImageSlide from "./ImageSlide";
 import OpeningSlide from "./OpeningSlide";
 
@@ -13,22 +16,12 @@ const Player = () => {
   const slides = useSlideStore((state) => state.slides);
 
   const SLIDE_COMPONENT: Record<SlideType, () => React.ReactElement> = {
-    [SlideType.OPENING]: () => (
-      <OpeningSlide
-       
-      />
-    ),
-    [SlideType.IMAGE]: () => (
-      <ImageSlide
-        images={DUMMY_IMAGES}
-        title={SLIDE_TYPE_TITLES[SlideType.IMAGE]}
-        content={SLIDE_TYPE_DESCRIPTIONS[SlideType.IMAGE]}
-      />
-    ),
+    [SlideType.OPENING]: () => <OpeningSlide />,
+    [SlideType.IMAGE]: () => <ImageSlide images={DUMMY_IMAGES} />,
     [SlideType.CHART]: () => <ChartSlide />,
-    [SlideType.CODE]: () => <OpeningSlide />,
-    [SlideType.COMPILER]: () => <OpeningSlide />,
-    [SlideType.CLOSING]: () => <OpeningSlide />,
+    [SlideType.CODE]: () => <CodeBlockSlide />,
+    [SlideType.COMPILER]: () => <CodeEditorSlide />,
+    [SlideType.CLOSING]: () => <ClosingSlide />,
   };
 
   return (
