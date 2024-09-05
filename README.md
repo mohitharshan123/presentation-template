@@ -1,6 +1,6 @@
 # Presentation Template
 
-This is a react app template which allows the user to create, reorder or delete presentation slides.
+This is a react app template which allows the user to create, reorder using drag and drop or delete presentation slides.
 
 Running the App
 
